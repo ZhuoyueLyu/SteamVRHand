@@ -20,7 +20,7 @@ namespace CurvedUI {
         bool autoSwitchHands = true;
 #pragma warning restore 414
 #pragma warning restore 0649
-
+        public Transform indexFinger;
 
 
 
@@ -170,9 +170,9 @@ namespace CurvedUI {
 
             if (CurvedUIInputModule.Instance.ControllerTransform)
             {
-                LaserBeam.transform.SetParent(CurvedUIInputModule.Instance.ControllerTransform);
+                LaserBeam.transform.SetParent(indexFinger);
                 LaserBeam.transform.ResetTransform();
-                LaserBeam.transform.LookAt(LaserBeam.transform.position + CurvedUIInputModule.Instance.ControllerPointingDirection);
+                LaserBeam.transform.LookAt(LaserBeam.transform.position + indexFinger.forward);
 
             }
             else Debug.LogError("CURVEDUI: No Active controller that can be used as a parent of the pointer. Is the controller gameobject present on the scene and active?");
