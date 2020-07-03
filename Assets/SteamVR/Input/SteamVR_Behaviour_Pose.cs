@@ -123,17 +123,18 @@ namespace Valve.VR
         protected virtual void UpdateTransform()
         {
             CheckDeviceIndex();
-
-            //if (origin != null)
-            //{
-            //    transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition);
-            //    transform.rotation = origin.rotation * poseAction[inputSource].localRotation;
-            //}
-            //else
-            //{
-            //    transform.localPosition = poseAction[inputSource].localPosition;
-            //    transform.localRotation = poseAction[inputSource].localRotation;
-            //}
+            /*
+            if (origin != null)
+            {
+                transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition);
+                transform.rotation = origin.rotation * poseAction[inputSource].localRotation;
+            }
+            else
+            {
+                transform.localPosition = poseAction[inputSource].localPosition;
+                transform.localRotation = poseAction[inputSource].localRotation;
+            }
+            */
         }
 
         private void SteamVR_Behaviour_Pose_OnChange(SteamVR_Action_Pose fromAction, SteamVR_Input_Sources fromSource)

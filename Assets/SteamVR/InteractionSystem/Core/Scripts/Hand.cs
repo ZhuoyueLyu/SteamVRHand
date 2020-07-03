@@ -690,11 +690,13 @@ namespace Valve.VR.InteractionSystem
 
             CleanUpAttachedObjectStack();
 
-            //if (mainRenderModel != null)
-            //    mainRenderModel.MatchHandToTransform(mainRenderModel.transform);
-            //if (hoverhighlightRenderModel != null)
-            //    hoverhighlightRenderModel.MatchHandToTransform(hoverhighlightRenderModel.transform);
-        }
+            /*
+            if (mainRenderModel != null)
+                mainRenderModel.MatchHandToTransform(mainRenderModel.transform);
+            if (hoverhighlightRenderModel != null)
+                hoverhighlightRenderModel.MatchHandToTransform(hoverhighlightRenderModel.transform);
+            */
+            }
 
 
         //-------------------------------------------------
@@ -1099,7 +1101,7 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void Update()
         {
-            //UpdateNoSteamVRFallback();
+            UpdateNoSteamVRFallback();
 
             GameObject attachedObject = currentAttachedObject;
             if (attachedObject != null)
@@ -1165,16 +1167,17 @@ namespace Valve.VR.InteractionSystem
                             targetHandPosition = objectT.TransformPoint(localSkelePos);
                             targetHandRotation = objectT.rotation * localSkeleRot;
                         }
+                        /*
+                        if (mainRenderModel != null)
+                            mainRenderModel.SetHandRotation(targetHandRotation);
+                        if (hoverhighlightRenderModel != null)
+                            hoverhighlightRenderModel.SetHandRotation(targetHandRotation);
 
-                        //if (mainRenderModel != null)
-                        //    mainRenderModel.SetHandRotation(targetHandRotation);
-                        //if (hoverhighlightRenderModel != null)
-                        //    hoverhighlightRenderModel.SetHandRotation(targetHandRotation);
-
-                        //if (mainRenderModel != null)
-                        //    mainRenderModel.SetHandPosition(targetHandPosition);
-                        //if (hoverhighlightRenderModel != null)
-                        //    hoverhighlightRenderModel.SetHandPosition(targetHandPosition);
+                        if (mainRenderModel != null)
+                            mainRenderModel.SetHandPosition(targetHandPosition);
+                        if (hoverhighlightRenderModel != null)
+                            hoverhighlightRenderModel.SetHandPosition(targetHandPosition);
+                        */
                     }
                 }
             }
