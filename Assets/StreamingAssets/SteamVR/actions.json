@@ -93,6 +93,14 @@
     {
       "name": "/actions/zhuoyue/in/smaller",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/MultiHand/in/newHand",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/MultiHand/in/moveHands",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -122,6 +130,10 @@
     },
     {
       "name": "/actions/zhuoyue",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/MultiHand",
       "usage": "single"
     }
   ],
@@ -192,7 +204,9 @@
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
       "/actions/changeHandSize/in/changeHand": "changeHand",
       "/actions/zhuoyue/in/bigger": "bigger",
-      "/actions/zhuoyue/in/smaller": "smaller"
+      "/actions/zhuoyue/in/smaller": "smaller",
+      "/actions/MultiHand/in/newHand": "newHand",
+      "/actions/MultiHand/in/moveHands": "moveHands"
     }
   ]
 }
