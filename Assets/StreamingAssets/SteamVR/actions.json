@@ -101,6 +101,10 @@
     {
       "name": "/actions/MultiHand/in/moveHands",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/MultiHand/in/flyingHand",
+      "type": "vector2"
     }
   ],
   "action_sets": [
@@ -206,7 +210,8 @@
       "/actions/zhuoyue/in/bigger": "bigger",
       "/actions/zhuoyue/in/smaller": "smaller",
       "/actions/MultiHand/in/newHand": "newHand",
-      "/actions/MultiHand/in/moveHands": "moveHands"
+      "/actions/MultiHand/in/moveHands": "moveHands",
+      "/actions/MultiHand/in/flyingHand": "flyingHand"
     }
   ]
 }

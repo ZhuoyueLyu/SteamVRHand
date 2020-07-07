@@ -32,5 +32,13 @@ namespace Valve.VR
                 return SteamVR_Actions.multiHand_moveHands;
             }
         }
+        
+        public virtual SteamVR_Action_Vector2 flyingHand
+        {
+            get
+            {
+                return SteamVR_Actions.multiHand_flyingHand;
+            }
+        }
     }
 }

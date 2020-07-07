@@ -696,14 +696,17 @@ namespace Valve.VR
             }
             else if (skeletonBlend >= 1)
             {
-                for (int boneIndex = 0; boneIndex < bones.Length; boneIndex++)
-                {
-                    if (bones[boneIndex] == null)
-                        continue;
+                if (bones != null) {
+                    for (int boneIndex = 0; boneIndex < bones.Length; boneIndex++)
+                    {
+                        if (bones[boneIndex] == null)
+                            continue;
 
-                    SetBonePosition(boneIndex, bonePositions[boneIndex]);
-                    SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                        SetBonePosition(boneIndex, bonePositions[boneIndex]);
+                        SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                    }
                 }
+              
             }
             else
             {

@@ -61,6 +61,12 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_zhuoyue_smaller;
         
+        private static SteamVR_Action_Boolean p_multiHand_newHand;
+        
+        private static SteamVR_Action_Boolean p_multiHand_moveHands;
+        
+        private static SteamVR_Action_Vector2 p_multiHand_flyingHand;
+        
         public static SteamVR_Action_Boolean default_InteractUI
         {
             get
@@ -237,6 +243,30 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean multiHand_newHand
+        {
+            get
+            {
+                return SteamVR_Actions.p_multiHand_newHand.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean multiHand_moveHands
+        {
+            get
+            {
+                return SteamVR_Actions.p_multiHand_moveHands.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Vector2 multiHand_flyingHand
+        {
+            get
+            {
+                return SteamVR_Actions.p_multiHand_flyingHand.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
         private static void InitializeActionArrays()
         {
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
@@ -261,7 +291,10 @@ namespace Valve.VR
                     SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.changeHandSize_changeHand,
                     SteamVR_Actions.zhuoyue_bigger,
-                    SteamVR_Actions.zhuoyue_smaller};
+                    SteamVR_Actions.zhuoyue_smaller,
+                    SteamVR_Actions.multiHand_newHand,
+                    SteamVR_Actions.multiHand_moveHands,
+                    SteamVR_Actions.multiHand_flyingHand};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
                     SteamVR_Actions.default_Teleport,
@@ -283,7 +316,10 @@ namespace Valve.VR
                     SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.changeHandSize_changeHand,
                     SteamVR_Actions.zhuoyue_bigger,
-                    SteamVR_Actions.zhuoyue_smaller};
+                    SteamVR_Actions.zhuoyue_smaller,
+                    SteamVR_Actions.multiHand_newHand,
+                    SteamVR_Actions.multiHand_moveHands,
+                    SteamVR_Actions.multiHand_flyingHand};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -304,13 +340,16 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.changeHandSize_changeHand,
                     SteamVR_Actions.zhuoyue_bigger,
-                    SteamVR_Actions.zhuoyue_smaller};
+                    SteamVR_Actions.zhuoyue_smaller,
+                    SteamVR_Actions.multiHand_newHand,
+                    SteamVR_Actions.multiHand_moveHands};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.buggy_Steering};
+                    SteamVR_Actions.buggy_Steering,
+                    SteamVR_Actions.multiHand_flyingHand};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[] {
                     SteamVR_Actions.default_SkeletonLeftHand,
@@ -332,7 +371,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.changeHandSize_changeHand,
                     SteamVR_Actions.zhuoyue_bigger,
-                    SteamVR_Actions.zhuoyue_smaller};
+                    SteamVR_Actions.zhuoyue_smaller,
+                    SteamVR_Actions.multiHand_newHand,
+                    SteamVR_Actions.multiHand_moveHands,
+                    SteamVR_Actions.multiHand_flyingHand};
         }
         
         private static void PreInitActions()
@@ -359,6 +401,9 @@ namespace Valve.VR
             SteamVR_Actions.p_changeHandSize_changeHand = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/changeHandSize/in/changeHand")));
             SteamVR_Actions.p_zhuoyue_bigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/zhuoyue/in/bigger")));
             SteamVR_Actions.p_zhuoyue_smaller = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/zhuoyue/in/smaller")));
+            SteamVR_Actions.p_multiHand_newHand = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MultiHand/in/newHand")));
+            SteamVR_Actions.p_multiHand_moveHands = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MultiHand/in/moveHands")));
+            SteamVR_Actions.p_multiHand_flyingHand = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/MultiHand/in/flyingHand")));
         }
     }
 }

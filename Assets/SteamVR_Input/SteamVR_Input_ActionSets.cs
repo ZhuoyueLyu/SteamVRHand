@@ -31,6 +31,8 @@ namespace Valve.VR
         
         private static SteamVR_Input_ActionSet_zhuoyue p_zhuoyue;
         
+        private static SteamVR_Input_ActionSet_MultiHand p_MultiHand;
+        
         public static SteamVR_Input_ActionSet_default _default
         {
             get
@@ -87,6 +89,14 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Input_ActionSet_MultiHand MultiHand
+        {
+            get
+            {
+                return SteamVR_Actions.p_MultiHand.GetCopy<SteamVR_Input_ActionSet_MultiHand>();
+            }
+        }
+        
         private static void StartPreInitActionSets()
         {
             SteamVR_Actions.p__default = ((SteamVR_Input_ActionSet_default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_default>("/actions/default")));
@@ -96,6 +106,7 @@ namespace Valve.VR
             SteamVR_Actions.p_NewSet = ((SteamVR_Input_ActionSet_NewSet)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_NewSet>("/actions/NewSet")));
             SteamVR_Actions.p_changeHandSize = ((SteamVR_Input_ActionSet_changeHandSize)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_changeHandSize>("/actions/changeHandSize")));
             SteamVR_Actions.p_zhuoyue = ((SteamVR_Input_ActionSet_zhuoyue)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_zhuoyue>("/actions/zhuoyue")));
+            SteamVR_Actions.p_MultiHand = ((SteamVR_Input_ActionSet_MultiHand)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_MultiHand>("/actions/MultiHand")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
                     SteamVR_Actions._default,
                     SteamVR_Actions.platformer,
@@ -103,7 +114,8 @@ namespace Valve.VR
                     SteamVR_Actions.mixedreality,
                     SteamVR_Actions.NewSet,
                     SteamVR_Actions.changeHandSize,
-                    SteamVR_Actions.zhuoyue};
+                    SteamVR_Actions.zhuoyue,
+                    SteamVR_Actions.MultiHand};
         }
     }
 }
