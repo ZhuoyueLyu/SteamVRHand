@@ -68,13 +68,16 @@ namespace Valve.VR.InteractionSystem
 			get
 			{
 				int count = 0;
-				for ( int i = 0; i < hands.Length; i++ )
-				{
-					if ( hands[i].gameObject.activeInHierarchy )
-					{
-						count++;
-					}
-				}
+                if (hands != null) {
+                    for (int i = 0; i < hands.Length; i++)
+                    {
+                        if (hands[i].gameObject.activeInHierarchy)
+                        {
+                            count++;
+                        }
+                    }
+                }
+				
 				return count;
 			}
 		}
